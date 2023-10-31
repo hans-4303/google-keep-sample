@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import CreateArea from "./components/CreateArea";
 import Header from "./components/Header";
-import NoteComponent from "./components/Note";
+import Note from "./components/Note";
 import Count from "./components/Count";
 
 import { defaultNote, creatingNote } from "./models/note.model";
@@ -21,7 +21,7 @@ function App() {
 
   /* 노트 수정 위한 함수, 파라미터로 수정할 내용 받기 */
   function updateNotes({ id, title, content }: defaultNote) {
-    const _notes = [];
+    const _notes: defaultNote[] = [];
     for (let i = 0; i < notes.length; i++) {
       if (i === id) {
         _notes.push({ id, title, content });
@@ -56,7 +56,7 @@ function App() {
         <CreateArea onAdd={addNote} />
         {/* 형성된 노트 배열을 map으로 반복 */}
         {notes.map((el, index) => (
-          <NoteComponent
+          <Note
             key={index}
             id={index}
             title={el.title}
