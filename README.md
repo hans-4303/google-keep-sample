@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### typescript 마이그레이션
+
+1. npm install --save typescript@4.9.5 @types/node @types/react @types/react-dom @types/jest
+2. npx tsc --init, tsconfig.json 생성
+3. {
+   "compilerOptions": {
+   "target": "es5",
+   "lib": ["dom", "dom.iterable", "esnext"],
+   "allowJs": true,
+   "skipLibCheck": true,
+   "strict": true,
+   "forceConsistentCasingInFileNames": true,
+   "noEmit": true,
+   "esModuleInterop": true,
+   "module": "esnext",
+   "moduleResolution": "node",
+   "resolveJsonModule": true,
+   "isolatedModules": true,
+   "jsx": "preserve",
+   "incremental": true,
+   "baseUrl": ".",
+   "paths": {
+   "@/_": ["./src/_"]
+   }
+   },
+   "include": ["**/*.ts", "**/*.tsx"],
+   "exclude": ["node_modules"]
+   }
+4. js, jsx -> ts, tsx
+5. 타입 등 설정해주기
