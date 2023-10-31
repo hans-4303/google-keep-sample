@@ -54,6 +54,7 @@ const CreateArea = ({ onAdd }) => {
         onBlur={(event) => {
           if (
             !event.currentTarget.contains(event.relatedTarget) &&
+            /* 내용이 있다면 메모는 닫히지 않는다 */
             note.title.length === 0 &&
             note.content.length === 0
           ) {
