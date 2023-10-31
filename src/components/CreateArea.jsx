@@ -4,6 +4,8 @@ import { IoIosAdd } from "react-icons/io";
 
 /* 상위 컴포넌트에서 props로 받아온 setState */
 const CreateArea = ({ onAdd }) => {
+  const [isExpanded, setExpanded] = useState(false);
+
   /* 객체 형 state 생성 */
   const [note, setNote] = useState({
     title: "",
@@ -24,35 +26,44 @@ const CreateArea = ({ onAdd }) => {
     });
   }
 
+  function handleExpanded() {
+    setExpanded(true);
+  }
+
   /* button에 연결된 함수 */
   function submitButton(event) {
     /* 이벤트 새로 고침 방지 */
     event.preventDefault();
     /* props로 받아온 setState 호출하고 현 컴포넌트 note state 대입 */
     onAdd(note);
-    /* 현 컴포넌트 note state 초기화 */
+    /* 현 컴포넌트 note, isExpanded state 초기화 */
     setNote({
       title: "",
       content: "",
     });
+    setExpanded(false);
   }
 
   return (
     <div>
       <form>
-        <input
-          value={note.title}
-          type="text"
-          placeholder="Title"
-          name="title"
-          onChange={handleChange}
-        />
+        {isExpanded && (
+          <input
+            value={note.title}
+            type="text"
+            placeholder="Title"
+            name="title"
+            onChange={handleChange}
+          />
+        )}
         <p>
           <textarea
             value={note.content}
+            onClick={handleExpanded}
             name="content"
             placeholder="Take a note..."
             onChange={handleChange}
+            rows={isExpanded ? 3 : 1}
           />
         </p>
         <button onClick={submitButton}>
