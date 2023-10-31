@@ -98,6 +98,38 @@ form textarea {
   resize: none;
 }
 
+form button {
+  /* form이 relative */
+  position: absolute;
+  /* flex 정렬 */
+  display: flex;
+  /* 내용 가로 가운데 정렬 */
+  justify-content: center;
+  /* 내용 세로 가운데 정렬 */
+  align-items: center;
+  /* 컨테이너 기준 위치 조절 */
+  right: 18px;
+  bottom: -18px;
+  /* 배경 */
+  background: rgb(255, 200, 18);
+  /* 색상 */
+  color: #ffffff;
+  /* 테두리 */
+  border: none;
+  /* 둥글기 */
+  border-radius: 50%;
+  /* 너비 */
+  width: 36px;
+  /* 길이 */
+  height: 36px;
+  /* 가로, 세로, 흐림 */
+  box-shadow: 0 1px 3px rgb(165, 165, 165);
+  /* 포인터 형 커서 */
+  cursor: pointer;
+  /* 아웃라인 없음 */
+  outline: none;
+}
+
 /* Note.jsx */
 
 .note {

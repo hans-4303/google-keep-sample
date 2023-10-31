@@ -8,7 +8,7 @@ function App() {
       <div>
         <Header />
         <CreateArea />
-        <Note />
+        {/* <Note /> */}
       </div>
     </>
   );
