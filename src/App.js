@@ -16,6 +16,14 @@ function App() {
     });
   }
 
+  /* 노트 삭제 위한 함수, 파라미터로 id 받고 호출 시 해당 노트 삭제 */
+  function deleteNotes(id) {
+    /* prevState => return [...prevState.filter((el, index))]로 불변성 및 이전 자료 유지 */
+    setNotes((prevState) => {
+      return [...prevState.filter((el, index) => index !== id)];
+    });
+  }
+
   return (
     <>
       <div>
@@ -25,7 +33,13 @@ function App() {
         <CreateArea onAdd={addNote} />
         {/* 형성된 노트 배열을 map으로 반복 */}
         {notes.map((el, index) => (
-          <Note key={index} id={index} title={el.title} content={el.content} />
+          <Note
+            key={index}
+            id={index}
+            title={el.title}
+            content={el.content}
+            onDelete={deleteNotes}
+          />
         ))}
       </div>
     </>
