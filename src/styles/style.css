@@ -16,12 +16,18 @@ body {
   background: #ffffff;
 }
 
+/* Header.jsx */
+
 .header {
   /* 좌우 마진을 -10 */
   margin: auto -10px;
   /* 상하 패딩 10, 좌우 패딩 20 */
   padding: 10px 20px;
-  /* 그림자, 상우하좌 -> 아래 쪽만 2px 부여하여 border 대체 */
+  /* box-shadow:
+  1번 인수는 가로 위치
+  2번 인수는 세로 위치
+  3번 인수는 흐림
+  4번 인수는 확장 */
   box-shadow: 0 0 2px 0 rgb(114, 114, 114, 0.4);
   /* <div styles={{display: "flex", flexDirection: "row", alignSelf: "center"}}></div> */
   /* flex 정렬 */
@@ -39,4 +45,55 @@ body {
   /* flex 요소에서 작성하고 있으므로 */
   margin-left: 10px;
   color: #5f6368;
+}
+
+/* CreateArea.jsx */
+
+form {
+  /* 포지션 relative, absolute 등 기준점 가능 */
+  position: relative;
+  /* 너비 */
+  width: 600px;
+  /* 상하 마진, 나머지 auto로 div 내부 요소 가운데 정렬 효과 */
+  margin: 32px auto 50px auto;
+  /* 배경색 */
+  background: #ffffff;
+  /* 패딩 */
+  padding: 7px;
+  /* 테두리 둥글기 */
+  border-radius: 7px;
+  /* 가로, 세로, 흐림 */
+  box-shadow: 0 1px 7px rgb(128, 128, 128);
+}
+
+form input {
+  /* form 내부 공간 100% */
+  width: 100%;
+  /* 테두리 없음 */
+  border: none;
+  /* 패딩 상하 4, 좌우 10 */
+  padding: 4px 10px;
+  /* 마진 바닥 20 */
+  margin-bottom: 20px;
+  /* outline 없음 */
+  outline: none;
+  /* 폰트 크기 1rem */
+  font-size: 1rem;
+  /* 리사이즈 없음(?) */
+  resize: none;
+}
+
+form textarea {
+  /* form 내부 공간 100% */
+  width: 100%;
+  /* 테두리 없음 */
+  border: none;
+  /* 패딩 상하 4, 좌우 10 */
+  padding: 4px 10px;
+  /* outline 없음 */
+  outline: none;
+  /* 폰트 크기 1rem */
+  font-size: 1rem;
+  /* 리사이즈 없음(?) */
+  resize: none;
 }
