@@ -3,6 +3,7 @@ import { useState } from "react";
 import CreateArea from "./components/CreateArea";
 import Header from "./components/Header";
 import Note from "./components/Note";
+import Count from "./components/Count";
 
 function App() {
   /* 노트를 담기 위한 상위 state */
@@ -28,6 +29,13 @@ function App() {
     <>
       <div>
         <Header />
+        <Count
+          count={
+            notes.length === 0
+              ? "Empty"
+              : `Showing ${notes.length} Notes in Database`
+          }
+        />
         {/* props에 노트 생성 함수 보내기
         CreateArea에서는 props.onAdd 형태로 작동 */}
         <CreateArea onAdd={addNote} />

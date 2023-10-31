@@ -183,3 +183,14 @@ form button {
   /* 아웃라인 없음 */
   outline: none;
 }
+
+/* Count.jsx */
+
+.count {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
