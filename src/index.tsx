@@ -4,7 +4,10 @@ import App from "./App";
 import "./styles/style.css";
 import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+/* ts 마이그레이션 하려면 as로 인터페이스 표기하기 */
+const root = ReactDOM.createRoot(
+  document.getElementById("root") as HTMLElement
+);
 root.render(
   <React.StrictMode>
     <App />

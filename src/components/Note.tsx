@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, ChangeEvent } from "react";
 import { MdEdit } from "react-icons/md";
 import { MdSave } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
+import { defaultNote, editNote } from "@/models/note.model";
+
 /* props title, content 수신 준비 완료 */
-const Note = ({ id, title, content, onDelete, onUpdate }) => {
+const Note = ({ id, title, content, onDelete, onUpdate }: {
+  id: number;
+  title: string;
+  content: string;
+  onDelete: (id: number) => void;
+  onUpdate: ({id, title, content}: defaultNote) => void;
+}) => {
   /* 노트 편집 상황인지 */
   const [editNote, setEditNote] = useState(false);
   /* 현재 노트 값들 받아오기 */
-  const [currentNote, setCurrentNote] = useState({
+  const [currentNote, setCurrentNote] = useState<editNote>({
     id,
     editTitle: title,
     editContent: content,
@@ -22,7 +30,7 @@ const Note = ({ id, title, content, onDelete, onUpdate }) => {
   }
 
   /* 노트 편집 함수 */
-  function handleInputEdit(event) {
+  function handleInputEdit(event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     /* 이벤트 발생 요소 및 name, value 받아오기 */
     const { name, value } = event.target;
     /* 스프레드로 불변성 지키고 이벤트 발생 요소 값 dispatch */
@@ -67,7 +75,7 @@ const Note = ({ id, title, content, onDelete, onUpdate }) => {
           <textarea
             name="editContent"
             defaultValue={currentNote.editContent}
-            row="1"
+            rows={1}
             onChange={handleInputEdit}
             className="edit-input"
           />
