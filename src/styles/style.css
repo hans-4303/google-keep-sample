@@ -97,3 +97,41 @@ form textarea {
   /* 리사이즈 없음(?) */
   resize: none;
 }
+
+/* Note.jsx */
+
+.note {
+  /* 배경 */
+  background: #ffffff;
+  /* 너비 */
+  width: 240px;
+  /* 둥글기 */
+  border-radius: 7px;
+  /* 가로, 세로, 흐림 */
+  box-shadow: 0 2px 5px rgb(175, 175, 175);
+  /* 패딩 */
+  padding: 10px;
+  /* 마진 */
+  margin: 16px;
+  /* 컨텐츠 대비 위치 */
+  float: left;
+}
+
+.note h1 {
+  /* 폰트 크기 */
+  font-size: 1rem;
+  /* 하단 마진 */
+  margin-bottom: 6px;
+}
+
+.note p {
+  /* 폰트 크기 */
+  font-size: 1rem;
+  /* 하단 마진 */
+  margin-bottom: 10px;
+  /* 공백 문자 처리, 줄 바꿈은 개행 문자와 <br>에서 일어나며 줄이 너무 길어서 넘칠 경우 자동으로 줄 바꾸기 */
+  white-space: pre-wrap;
+  /* 텍스트가 컨테이너 요소 바깥으로 오버플로 할 때 줄 바꿀지 지정
+  break word: 실제 overflow-wrap 속성 상관 없이 word-break: normal + overflow-wrap: anywhere과 같은 효과 */
+  word-wrap: break-word;
+}
