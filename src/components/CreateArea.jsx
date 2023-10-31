@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { IoIosAdd } from "react-icons/io";
+
 /* 상위 컴포넌트에서 props로 받아온 setState */
 const CreateArea = ({ onAdd }) => {
   /* 객체 형 state 생성 */
@@ -32,7 +34,7 @@ const CreateArea = ({ onAdd }) => {
     setNote({
       title: "",
       content: "",
-    })
+    });
   }
 
   return (
@@ -53,7 +55,9 @@ const CreateArea = ({ onAdd }) => {
             onChange={handleChange}
           />
         </p>
-        <button onClick={submitButton}>Add</button>
+        <button onClick={submitButton}>
+          <IoIosAdd size={35} />
+        </button>
       </form>
     </div>
   );
