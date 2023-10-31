@@ -41,12 +41,22 @@ const CreateArea = ({ onAdd }) => {
       title: "",
       content: "",
     });
-    setExpanded(false);
   }
 
   return (
     <div>
-      <form>
+      <form
+        /* tabIndex 작성 시도했지만 큰 의미 없었음 */
+        tabIndex={1}
+        /* onMouseDown 우선도가 높음 */
+        onMouseDown={handleExpanded}
+        /* onBlur에서 이벤트 받기, 현재 타겟 요소가 관련 타겟 요소 갖고 있지 않다면 폼 닫기 */
+        onBlur={(event) => {
+          if (!event.currentTarget.contains(event.relatedTarget)) {
+            setExpanded(false);
+          }
+        }}
+      >
         {isExpanded && (
           <input
             value={note.title}
@@ -59,7 +69,6 @@ const CreateArea = ({ onAdd }) => {
         <p>
           <textarea
             value={note.content}
-            onClick={handleExpanded}
             name="content"
             placeholder="Take a note..."
             onChange={handleChange}
