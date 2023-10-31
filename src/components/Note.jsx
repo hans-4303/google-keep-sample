@@ -1,10 +1,11 @@
 import React from "react";
 
-const Note = () => {
+/* props title, content 수신 준비 완료 */
+const Note = ({ title, content }) => {
   return (
     <div className="note">
-      <h1>My note</h1>
-      <p>hey what's going on</p>
+      <h1>{title || "My note"}</h1>
+      <p>{content || "hey what's going on"}</p>
     </div>
   );
 };
