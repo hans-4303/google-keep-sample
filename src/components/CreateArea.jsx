@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const CreateArea = () => {
+/* 상위 컴포넌트에서 props로 받아온 setState */
+const CreateArea = ({ onAdd }) => {
   /* 객체 형 state 생성 */
   const [note, setNote] = useState({
     title: "",
@@ -25,7 +26,8 @@ const CreateArea = () => {
   function submitButton(event) {
     /* 이벤트 새로 고침 방지 */
     event.preventDefault();
-    console.log(event);
+    /* props로 받아온 setState 호출하고 현 컴포넌트 note state 대입 */
+    onAdd(note);
   }
 
   return (
