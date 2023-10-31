@@ -1,3 +1,7 @@
+/* 전역 css 파일로 형성 */
+
+/* *, html, body 등 요소를 작성하고 전역 css로 쓰고 있다 볼 수 있음
+이후 작업한다면 StyledEngineProvider, ThemeProvider로 변환해보기 */
 * {
   padding: 0;
   margin: 0;
@@ -13,7 +17,23 @@ body {
 }
 
 .header {
+  /* 좌우 마진을 -10 */
   margin: auto -10px;
+  /* 상하 패딩 10, 좌우 패딩 20 */
   padding: 10px 20px;
+  /* 그림자, 상우하좌 -> 아래 쪽만 2px 부여하여 border 대체 */
   box-shadow: 0 0 2px 0 rgb(114, 114, 114, 0.4);
+  /* <div styles={{display: "flex", flexDirection: "row", alignSelf: "center"}}></div> */
+  /* flex 정렬 */
+  display: flex;
+  /* row -> column: 세로에서 가로 정렬 */
+  flex-direction: row;
+  /* 아이템 자체(self)를 정렬하기, 단 grid나 flex에서 유효함 */
+  align-self: center;
+  /* 해당 요소 내부 아이템들(items)를 정렬하기, grid나 flex에서 유효함 */
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 1.5rem;
 }
