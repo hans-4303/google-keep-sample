@@ -6,6 +6,7 @@ const Note = ({ title, content }) => {
     <div className="note">
       <h1>{title || "My note"}</h1>
       <p>{content || "hey what's going on"}</p>
+      <button>Delete</button>
     </div>
   );
 };
