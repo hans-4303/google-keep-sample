@@ -52,7 +52,11 @@ const CreateArea = ({ onAdd }) => {
         onMouseDown={handleExpanded}
         /* onBlur에서 이벤트 받기, 현재 타겟 요소가 관련 타겟 요소 갖고 있지 않다면 폼 닫기 */
         onBlur={(event) => {
-          if (!event.currentTarget.contains(event.relatedTarget)) {
+          if (
+            !event.currentTarget.contains(event.relatedTarget) &&
+            note.title.length === 0 &&
+            note.content.length === 0
+          ) {
             setExpanded(false);
           }
         }}
