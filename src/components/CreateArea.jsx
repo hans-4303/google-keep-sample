@@ -28,6 +28,11 @@ const CreateArea = ({ onAdd }) => {
     event.preventDefault();
     /* props로 받아온 setState 호출하고 현 컴포넌트 note state 대입 */
     onAdd(note);
+    /* 현 컴포넌트 note state 초기화 */
+    setNote({
+      title: "",
+      content: "",
+    })
   }
 
   return (
