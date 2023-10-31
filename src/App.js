@@ -17,6 +17,19 @@ function App() {
     });
   }
 
+  /* 노트 수정 위한 함수, 파라미터로 수정할 내용 받기 */
+  function updateNotes({ id, title, content }) {
+    const _notes = [];
+    for (let i = 0; i < notes.length; i++) {
+      if (i === id) {
+        _notes.push({ id, title, content });
+      } else {
+        _notes.push(notes[i]);
+      }
+    }
+    setNotes(_notes);
+  }
+
   /* 노트 삭제 위한 함수, 파라미터로 id 받고 호출 시 해당 노트 삭제 */
   function deleteNotes(id) {
     /* prevState => return [...prevState.filter((el, index))]로 불변성 및 이전 자료 유지 */
@@ -47,6 +60,7 @@ function App() {
             title={el.title}
             content={el.content}
             onDelete={deleteNotes}
+            onUpdate={updateNotes}
           />
         ))}
       </div>
