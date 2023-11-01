@@ -47,8 +47,8 @@ function App() {
         <Count
           count={
             notes.length === 0
-              ? "Empty"
-              : `Showing ${notes.length} Notes in Database`
+              ? "작성된 메모가 없습니다."
+              : `현재 ${notes.length}개 메모가 표시됩니다.`
           }
         />
         {/* props에 노트 생성 함수 보내기
