@@ -72,7 +72,7 @@ const CreateArea = ({
           <input
             value={note.title}
             type="text"
-            placeholder="Title"
+            placeholder="제목을 작성해보세요."
             name="title"
             onChange={handleChange}
           />
@@ -81,7 +81,7 @@ const CreateArea = ({
           <textarea
             value={note.content}
             name="content"
-            placeholder="Take a note..."
+            placeholder="내용을 작성해보세요."
             onChange={handleChange}
             rows={isExpanded ? 3 : 1}
           />

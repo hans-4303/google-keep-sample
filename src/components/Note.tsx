@@ -1,7 +1,6 @@
 import React, { useState, ChangeEvent } from "react";
 import { MdEdit } from "react-icons/md";
 import { MdSave } from "react-icons/md";
-import { MdCancel } from "react-icons/md";
 import { MdUndo } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
@@ -90,8 +89,8 @@ const Note = ({ id, title, content, onDelete, onUpdate }: {
         </div>
       ) : (
         <div className="note">
-          <h1>{title || "My note"}</h1>
-          <p>{content || "hey what's going on"}</p>
+          <h1>{title || "샘플 제목"}</h1>
+          <p>{content || "샘플 내용"}</p>
           {/* 삭제 위한 버튼, 이벤트 사용 없으며 setState 포함 함수 및 각 컴포넌트 id를 props로 받고 활용하기 */}
           <button onClick={() => onDelete(id)}>
             <MdDelete size={25} />
