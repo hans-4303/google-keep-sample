@@ -2,6 +2,7 @@ import React, { useState, ChangeEvent } from "react";
 import { MdEdit } from "react-icons/md";
 import { MdSave } from "react-icons/md";
 import { MdCancel } from "react-icons/md";
+import { MdUndo } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
 import { defaultNote, editNote } from "@/models/note.model";
@@ -81,7 +82,7 @@ const Note = ({ id, title, content, onDelete, onUpdate }: {
           />
           {/* 노트 업데이트 및 업데이트 취소 UI */}
           <button onClick={updateCancel}>
-            <MdCancel size={25} />
+            <MdUndo size={25} />
           </button>
           <button onClick={updateNote}>
             <MdSave size={25} />
