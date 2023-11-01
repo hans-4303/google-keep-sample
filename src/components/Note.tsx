@@ -80,11 +80,11 @@ const Note = ({ id, title, content, onDelete, onUpdate }: {
             className="edit-input"
           />
           {/* 노트 업데이트 및 업데이트 취소 UI */}
-          <button onClick={updateNote}>
-            <MdSave size={25} />
-          </button>
           <button onClick={updateCancel}>
             <MdCancel size={25} />
+          </button>
+          <button onClick={updateNote}>
+            <MdSave size={25} />
           </button>
         </div>
       ) : (
